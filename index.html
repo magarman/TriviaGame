@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Trivia Quiz</title>
+    <!--Bootstrap & my stylesheet-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="main-container"></div>
+    
+    <!--Content Jumbotron (title, start button and questions will show in here)-->
+    <div class="container-fluid">
+        Trivia panel
+        <div class="jumbotron">
+            <div class="container">
+                <h1 class="text-center" style="color:white;"><strong>Trivia Time!</strong></h1>
+                <br><br>
+                <button type="button" class="btn btn-outline-light center-block"><strong><h3>Press start to begin</h3></strong></button>
+            </div>
+        </div>
+    </div>
+    <!--This will be the timer-->
+    <h2 class="text-center" id="timer"> </h2>
+    <!--The actual game will be here (questions, choices, etc)-->
+    <div class="text-center" id="game"> </div>
+
+<!--Closing of main-container DIV, do not erase!!!-->
+</div>
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!--Linking my js file-->
+    <script src="assets/javascript/app.js"></script>
+
+</body>
+</html>
