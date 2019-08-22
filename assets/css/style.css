@@ -13,6 +13,11 @@ body {
     font
 }
 
+h2 {
+    color: black;
+
+}
+
 h4 {
     color: black;
     font-weight: bold;
@@ -24,4 +29,13 @@ h6 {
     color: black;
     font-weight: bold;
     font-size: 30px;
+}
+
+.questions.question {
+    font-size: 50px;
+}
+
+mark {
+    background-color: white;
+    color: black;
 }
