@@ -17,12 +17,14 @@ h2 {
     color: black;
 
 }
+h3 {
+    color: black;
+}
 
 h4 {
     color: black;
     font-weight: bold;
     font-size: 45px;
-
 }
 
 h6 {

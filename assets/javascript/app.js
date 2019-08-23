@@ -72,6 +72,7 @@ var game = {
     counter:30,
     correct:0,
     incorrect:0,
+    unanswered:0,
     countdown: function() {
         console.log(game.counter);
         //This method will change the timer
@@ -106,10 +107,25 @@ var game = {
         game.loadQuestion();
     },
     timeUp: function() {
-        
+        clearInterval();
+        game.unanswered++;
+        $('#subwrapper').html('<h2>You are out of time!</h2>');
+        $('#subwrapper').append('<h3>The correct answer was: '+questions[game.currentQuestion].correctAnswer+'</h3>');
+        if(game.currentQuestion===questions.length-1){
+            setTimeout(game.results,1000);
+            console.log("a2");
+            setTimeout(game.nextQuestion,1000);
+        } else {
+            setTimeout(function (){game.nextQuestion()},3000);   
+            console.log("d2");
+        }
     },
     results: function() {
-
+        clearInterval(timer);
+        $('#subwrapper').html("<h2>All done!</h2>");
+        $('#subwrapper').append("<h3>Correct: "+game.correct+"</h3>");
+        $('#subwrapper').append("<h3>Incorrect: "+game.incorrect+"</h3>");
+        $('#subwrapper').append("<h3>Unanswered: "+game.unanswered+"</h3>");
     },
     clicked: function(e) {
     //Clear interval, because we don't want timer running after we've clicked the button. We want it to stop at that point
@@ -154,7 +170,9 @@ var game = {
         clearInterval(timer);
         //Same as the previous, but add on the incorrect variable instead
         game.incorrect++;
+        $('#subwrapper').html('<h2>You are out of time!</h2>');
         $('#subwrapper').html('<h2>No :(<h2>');
+        $('#subwrapper').append('<h3>The correct answer was: '+questions[game.currentQuestion].correctAnswer+'</h3>');
         if(game.currentQuestion===questions.length-1){
             setTimeout(function() {game.results()},1000);
             console.log("b");
