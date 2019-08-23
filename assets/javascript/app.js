@@ -169,3 +169,6 @@ var game = {
     }
 
 }
+
+//Not calling the function properly, we didn't include the function on the set tIMEOUT
+//ALSO was calling like a function, but like a variable instead.
