@@ -89,8 +89,11 @@ var game = {
     loadQuestion: function(){
     //When we load the question, set the timer to run. 
     timer = setInterval(game.countdown,30000);
+   // Not including this below because the counter doesn't work
+   // $('#subwrapper').html("<h2 id='timer'>30</h2>");
+
     //On the page, wherever the subwrapper is, post whatever index is being passed on the currentQuestion method.
-    $('#subwrapper').html('<h2>'+questions[game.currentQuestion].question+'</h2>');
+    $('#subwrapper').append('<h2>'+questions[game.currentQuestion].question+'</h2>');
     //Also post the answers as buttons
     for(var i=0;i<questions[game.currentQuestion].answers.length;i++){
         $('#subwrapper').append('<button class="answer-button" id="button-'+i+'" data-name="'+questions[game.currentQuestion].answers[i]+'">'+questions[game.currentQuestion].answers[i]+'</button>');
